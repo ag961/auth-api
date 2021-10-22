@@ -4,7 +4,7 @@ const middleware = require('../../../src/auth/middleware/basic.js');
 const { db, users } = require('../../../src/models/index.js');
 
 let userInfo = {
-  admin: { username: 'admin-basic', password: 'password' },
+  admin: { username: 'admin', password: 'password' },
 };
 
 // Pre-load our database with fake users
@@ -52,7 +52,7 @@ describe('Auth Middleware', () => {
 
       // Change the request to match this test case
       req.headers = {
-        authorization: 'Basic YWRtaW4tYmFzaWM6cGFzc3dvcmQ=',
+        authorization: 'Basic YWRtaW46cGFzc3dvcmQ=',
       };
 
       return middleware(req, res, next)

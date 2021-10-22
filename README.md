@@ -12,7 +12,7 @@ Ayrat Gimranov
 
 ## Collaborators
 
-
+Charlie Fadness
 
 ## Version
 
@@ -29,4 +29,4 @@ Dev branch -- https://ayrat-server-deploy-dev.herokuapp.com/
 
 ## UML
 
-![lab8](./img/lab8.png);
+![lab8](./img/lab8UML.png);

@@ -23,9 +23,9 @@ class DataCollection {
     return this.model.create(record);
   }
 
-  update(id, data) {
-    return this.model.findOne({ where: { id } })
-      .then(record => record.update(data));
+  async update(id, data) {
+    let response = await this.model.findOne({ where: { id } })
+    return response.update(data);
   }
 
   delete(id) {
