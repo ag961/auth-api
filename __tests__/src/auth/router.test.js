@@ -9,9 +9,10 @@ const { db } = require('../../../src/models/index.js');
 const mockRequest = supertest(server);
 
 let users = {
-  admin: { username: 'admin', password: 'password' },
-  editor: { username: 'editor', password: 'password' },
-  user: { username: 'user', password: 'password' },
+  admin: { username: 'admin', password: 'password', role: 'admin' },
+  editor: { username: 'editor', password: 'password', role: 'editor' },
+  user: { username: 'user', password: 'password', role: 'user' },
+  writer: { username: 'writer', password: 'password', role: 'writer' },
 };
 
 beforeAll(async (done) => {
@@ -63,13 +64,17 @@ describe('Auth Router', () => {
 
         const token = response.body.token;
 
-        // First, use basic to login to get a token
+
         const bearerResponse = await mockRequest
           .get('/users')
           .set('Authorization', `Bearer ${token}`)
 
         // Not checking the value of the response, only that we "got in"
-        expect(bearerResponse.status).toBe(200);
+        if (users[userType].username === 'admin') {
+          expect(bearerResponse.status).toBe(200);
+        } else {
+          expect(bearerResponse.status).toBe(500);
+        }
         done();
       });
 
