@@ -16,7 +16,7 @@ Charlie Fadness
 
 ## Version
 
-1.0.0
+1.0.1
 
 ## Resources
 
@@ -24,8 +24,8 @@ Code Feloows 401: JS starter code (https://github.com/codefellows/seattle-javasc
 
 ## Deployed Sites
 
-Prod branch -- https://ayrat-server-deploy-prod.herokuapp.com/
-Dev branch -- https://ayrat-server-deploy-dev.herokuapp.com/
+Prod branch -- https://ayrat-auth-api-prod.herokuapp.com/
+Dev branch -- https://ayrat-auth-api-dev.herokuapp.com/
 
 ## UML
 
